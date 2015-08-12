@@ -1,0 +1,290 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+
+@import "toolbelt/toolbelt";
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	@include row();
+}
+
+body>nav{
+	background-color: $darkColor;
+	color: #fff;
+	@include grid-cell(1,1);
+	@include medium-grid-cell(1,4);
+	@include large-grid-cell(1,5);
+	top: 0;
+	position: fixed;
+	z-index: 2;
+	
+	text-align: center;
+
+	>button{
+		position: absolute;
+		top: 15px;
+		right: 10px;
+		min-width: 30px;
+		width: 40px;
+		height: 40px;
+		padding: 0;
+
+		@include medium-hide();
+	}
+
+	.side-menu ul{
+		max-height: 0;
+		overflow: hidden;
+
+		&.open{
+			max-height: 500px;
+		}
+	}
+
+
+	@include medium-styles(){
+		.side-menu ul{
+			max-height: 100%;
+		}
+
+		min-height: 100vh;
+		height: 100%;
+		text-align: left;
+		position: relative;
+	}
+
+	>header>h1, >header>h2{
+		font-size: 1.5rem;
+		width: 100%;
+		text-align: center;
+		margin: 20px 0 10px;
+
+		a{
+		  color: #fff;
+		  text-decoration: none;
+		}
+	}
+
+	>header>h2{
+		color: $lightColor;
+		font-size: 1.1rem;
+		margin: 10px 0;
+		font-weight: lighter;
+	}
+}
+
+body>section{
+	background-color: $lightColor;
+	height: 100vh;
+	overflow-y: scroll;
+	@include grid-cell(1,1,0,20px);
+	@include medium-grid-cell(3,4);
+	@include large-grid-cell(4,5);
+
+	padding-top: 100px;
+
+	@include medium-styles(){
+		padding-top: 20px;
+	}
+
+	.demo-box{
+		position: relative;
+		background-color: #fff;
+		padding: 20px;
+	}
+
+
+	>h1{
+		font-size: 1.8rem;
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+
+	>h2{
+		font-size: 1.4rem;
+		margin: 20px 0;
+	}
+
+	>h3{
+		font-size: 1.2rem;
+		font-weight: lighter;
+		margin: 10px 0;
+	}
+
+	>p{
+		margin-bottom: 10px;
+	}
+
+	>ul{
+		list-style: disc;
+		padding: 0 0 0 20px;
+
+		li{
+			margin-bottom: 5px;
+		}
+	}
+
+  	table{
+	  margin-bottom: 40px;
+	}
+}
+
+#breakpoints-demo{
+	.alert{
+		display: none;
+	}
+	.phoneScreen{
+		display: block;
+		@include small-hide();
+	}
+	.smallScreen{
+		@include small-show();
+		@include medium-hide();
+	}
+	.mediumScreen{
+		@include medium-show();
+		@include large-hide();
+	}
+	.largeScreen{
+		@include large-show();
+		@include x-large-hide();
+	}
+	.x-largeScreen{
+		@include x-large-show();
+	}
+}
+
+#grid-demo{
+
+	.content{
+		@include row();
+
+		article{
+			min-height: 50px; /* Demo purposes */
+			border:1px solid #eee; /* Demo purposes */
+			
+			@include grid-cell(1,5);
+		}
+
+		article.big{
+			@include grid-cell(3,5);
+		}
+
+		article.medium{
+			@include grid-cell(2,5);
+		}
+
+		article.block{
+			@include grid-cell();
+		}
+	}
+}
+
+#responsive-grid-demo{
+
+	.content{
+		@include row();
+
+		article{
+			min-height: 50px; /* Demo purposes */
+			border:1px solid #eee; /* Demo purposes */
+			
+			@include grid-cell();
+			@include medium-grid-cell(1,5);
+		}
+
+		article.big{
+			@include medium-grid-cell(3,5);
+		}
+
+		article.medium{
+			@include medium-grid-cell(2,5);
+		}
+	}
+}
+
+
+#breakpointStyles-demo{
+
+  .change{
+	background-color: #F1C40F;
+	color: #fff;
+	padding: 5px 10px;
+
+	@include small-styles(){
+	  background-color: #3498DB;
+	  padding: 10px;
+  	}
+
+	@include medium-styles(){
+	  background-color: #F39C12;
+	  color: #000;
+	}
+
+	@include large-styles(){
+	  background-color: #E74C3C;
+	  padding: 10px 15px;
+	}
+
+	@include x-large-styles(){
+	  background-color: #1ABC9C;
+	}
+  }
+}
+
+.tabbed-view{
+	margin: 10px 0;
+
+	.tabs{
+		display: block;
+		overflow: hidden;
+		zoom: 1;
+
+		li{
+			background-color: #eee;
+			display: inline-block;
+			border: 1px solid #ccc;
+			float: left;
+			padding: 5px 10px;
+			border-radius: 5px 5px 0 0;
+			cursor: pointer;
+
+			&+li{
+				border-left: none;
+			}
+
+			&.active{
+				background-color: #fff;
+			}
+		}
+	}
+
+	>pre{
+		margin: 0;
+		display: none;
+
+		&.active{
+			display: block;
+		}
+	}
+}
+
+.pcWarning{
+  display: none;
+  @include medium-show(inline);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

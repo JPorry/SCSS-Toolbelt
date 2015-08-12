@@ -1,0 +1,109 @@
+$input-border-color-focus: $contrastColor !default;
+$input-error-color: $dangerColor !default;
+$input-border-color: $midtone !default;
+$input-icon-background-color: $contrastColor !default;
+$input-icon-color: rgba(0,0,0,.5) !default;
+
+
+label.input{
+  display: block;
+  position: relative;
+  margin: 10px 0;
+  font-size: 1rem;
+  transition: all .3s;
+      
+  input{
+      display: block;
+      width: 100%;
+      padding: 10px 15px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+      
+      transition: all .3s;
+      
+      &:focus{
+        outline: none;
+        border: 1px solid $input-border-color-focus;
+      }
+    }
+  
+  &.inline{
+
+    @include medium-styles(){
+      display: inline-block;
+      width: 100%;
+      text-align: left;
+      vertical-align: middle;
+      height: 40px;
+
+      input{
+        position: absolute;
+        top: -20px;
+        right: 0;
+        display: inline-block;
+        width: 75%;
+        margin-left: 15px;
+      }
+    }
+
+  }
+  
+  &.icon{
+    overflow: hidden;
+
+    >i{
+      display: inline-block;
+      color: $input-icon-color;
+      background-color: $input-icon-background-color;
+      padding: 10px 0;
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+      text-align: center;
+      border: 1px solid $input-icon-background-color;
+    }
+    
+    >i+input{
+      display: block;
+      width: calc(100% - 40px);
+      float: right;
+      height: 40px;
+      border-left: none !important;
+      margin-top: 0;
+
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 11px;
+      left: 39px;
+      border: 9px solid transparent;
+      border-left: 7px solid $input-icon-background-color;
+      z-index: 2;
+      -webkit-transition: all .3s;
+      transition: all .3s;
+    }
+    
+    &.error{
+
+      >i{
+        background-color: $input-error-color;
+        border-color: $input-error-color;
+      }
+
+      &:before {
+        border-left-color: $input-error-color;
+      }
+    }
+    
+  }
+      
+  &.error{
+        input{
+          border: 1px solid $input-error-color;
+        }
+      }
+}
