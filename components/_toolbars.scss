@@ -1,0 +1,107 @@
+$toolbar-background-color: $darkColor !default;
+$toolbar-text-color: $lightColor !default;
+$toolbar-highlight-color: $contrastColor !default;
+
+$toolbar-height: 50px !default;
+$toolbar-menu-font-size: .9rem !default;
+
+.toolbar{
+  width: 100%;
+  height: $toolbar-height;
+  padding: 0;
+  background-color: $toolbar-background-color;
+  color: $toolbar-text-color;
+
+  .title{
+    float: left;
+    font-size: 1.5rem;
+    line-height: $toolbar-height;
+    margin-left: 15px;
+  }
+
+  >button.toggleMenu{
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    padding: 0;
+    float: right;
+    @include medium-hide();
+  }
+  
+  .menu{
+    //margin-left: 25px;
+    float: left;
+    display: block;
+    width: 100%;
+    background-color: $toolbar-background-color;
+    font-size: $toolbar-menu-font-size;
+    position: relative;
+
+    &.open{
+
+      >ul{
+        display: block;
+      }
+    }
+
+    >ul{
+      display: none;
+      height: 100%;
+    }
+
+    >ul>li{
+      display: block;
+
+      margin: 0 10px 0 0;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: color .3s;
+
+      &:hover, &.active{
+        color: $toolbar-highlight-color;
+      }
+    }
+
+    >.menu-section+.menu-section{
+      border-top: 1px solid $toolbar-text-color;
+      margin-top: 5px;
+      padding-top: 5px;
+    }
+
+    @include medium-styles(){
+      width: auto;
+      float: left;
+      margin: 0 25px;
+
+      &.right{
+        float: right;
+      }
+
+      >ul{
+        display: inline-block !important;
+      }
+
+      >.menu-section+.menu-section{
+        border: none;
+        padding: 0;
+        margin-top: 0;
+
+        &:before{
+          content: '|';
+          margin-right: 10px;
+        }
+      }
+
+      >ul>li{
+        line-height: $toolbar-height;
+        display: inline-block;
+        padding: 0;
+      }
+    }
+  }
+  
+  &.light{
+    background-color: $toolbar-text-color;
+    color: $toolbar-background-color;
+  }
+}

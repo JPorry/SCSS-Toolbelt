@@ -1,0 +1,27 @@
+.media{
+  
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  
+  .media-image{
+    float:left; 
+    margin-right: 10px;
+    width: 100px;
+    height: 100px;
+    
+    img{
+      display: block;
+    }
+  }
+  
+  &, & .media-body{
+    overflow: hidden;
+    _overflow:visible;
+    zoom:1;
+  }
+  
+  .media-body *{
+    width: 100%;
+  }
+}

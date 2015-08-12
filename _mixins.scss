@@ -1,0 +1,179 @@
+$small: 568px !default;
+$medium: 768px !default;
+$large: 1024px !default;
+$x-large: 1280px !default;
+
+/* GRID */
+
+@mixin row($padding:'auto'){
+	position: relative;
+	@if $padding != 'auto'{
+		padding: $padding;
+	}
+
+	&:after {
+		content: " ";
+		display: block;
+		height: 0;
+		clear: both;
+		overflow: hidden;
+		visibility: hidden;
+	}
+}
+
+@mixin grid-cell($size:1, $of:1, $offset:0, $padding:'auto'){
+	$measure: ($size/$of)*100%;
+
+	display: inline-block;
+	float: left;
+	margin-left: $offset * $measure;
+	width: $measure;
+	@if $padding != 'auto'{
+		padding: $padding;
+	}
+}
+
+@mixin small-grid-cell($size:1, $of:1, $offset:0, $padding:'auto'){
+	$measure: ($size/$of)*100%;
+
+	@media screen and (min-width: $small){
+		margin-left: $offset * $measure;
+		width: $measure;
+		@if $padding != 'auto'{
+			padding: $padding;
+		}
+	}
+}
+
+@mixin medium-grid-cell($size:1, $of:1, $offset:0, $padding:'auto'){
+	$measure: ($size/$of)*100%;
+
+	@media screen and (min-width: $medium){
+		margin-left: $offset * $measure;
+		width: $measure;
+		@if $padding != 'auto'{
+			padding: $padding;
+		}
+	}
+}
+
+@mixin large-grid-cell($size:1, $of:1, $offset:0, $padding:'auto'){
+	$measure: ($size/$of)*100%;
+
+	@media screen and (min-width: $large){
+		margin-left: $offset * $measure;
+		width: $measure;
+		@if $padding != 'auto'{
+			padding: $padding;
+		}
+	}
+}
+
+@mixin x-large-grid-cell($size:1, $of:1, $offset:0, $padding:'auto'){
+	$measure: ($size/$of)*100%;
+
+	@media screen and (min-width: $x-large){
+		margin-left: $offset * $measure;
+		width: $measure;
+		@if $padding != 'auto'{
+			padding: $padding;
+		}
+	}
+}
+
+
+/* HELPERS */
+
+@mixin small-styles(){
+	@media screen and (min-width: $small){
+		@content
+	}
+}
+
+@mixin medium-styles(){
+	@media screen and (min-width: $medium){
+		@content
+	}
+}
+
+@mixin large-styles(){
+	@media screen and (min-width: $large){
+		@content
+	}
+}
+
+@mixin x-large-styles(){
+	@media screen and (min-width: $x-large){
+		@content
+	}
+}
+
+
+@mixin small-hide(){
+	@media screen and (min-width: $small){
+		display: none !important;
+	}
+}
+
+@mixin medium-hide(){
+	@media screen and (min-width: $medium){
+		display: none !important;
+	}
+}
+
+@mixin large-hide(){
+	@media screen and (min-width: $large){
+		display: none !important;
+	}
+}
+
+@mixin x-large-hide(){
+	@media screen and (min-width: $x-large){
+		display: none !important;
+	}
+}
+
+@mixin small-show($display:block){
+	@media screen and (min-width: $small){
+		display: $display;
+	}
+}
+
+@mixin medium-show($display:block){
+	@media screen and (min-width: $medium){
+		display: $display;
+	}
+}
+
+@mixin large-show($display:block){
+	@media screen and (min-width: $large){
+		display: $display;
+	}
+}
+
+@mixin x-large-show($display:block){
+	@media screen and (min-width: $x-large){
+		display: $display;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

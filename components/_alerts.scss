@@ -1,0 +1,49 @@
+$alert-primary-background-color: $primaryColor !default;
+$alert-secondary-background-color: $secondaryColor !default;
+$alert-warning-background-color: $warningColor !default;
+$alert-info-background-color: $infoColor !default;
+$alert-danger-background-color: $dangerColor !default;
+
+$alert-text-color: $lightTextColor !default;
+$alert-secondary-text-color: $lightTextColor !default;
+$alert-warning-text-color: $lightTextColor !default;
+$alert-info-text-color: $lightTextColor !default;
+$alert-danger-text-color: $lightTextColor !default;
+
+$alert-border-color: rgba(0,0,0,.1);
+
+.alert{
+	background-color: $alert-primary-background-color;
+	display: inline-block;
+	width: 100%;
+	line-height: 40px;
+	color: $alert-text-color;
+	border: 3px solid $alert-border-color;
+	padding: 0 20px;
+
+	&.small{
+		font-size: .8rem;
+		line-height: 25px;
+		border-width: 1px;
+		font-size: 100;
+	}
+
+	&.secondary{ 
+		background-color: $alert-secondary-background-color; 
+		color: $alert-secondary-text-color;
+	}
+	&.warning{ 
+		background-color: $alert-warning-background-color; 
+		color: $alert-warning-text-color;
+	}
+	&.info{ 
+		background-color: $alert-info-background-color; 
+		color: $alert-info-text-color;
+	}
+	&.danger{ 
+		background-color: $alert-danger-background-color; 
+		color: $alert-danger-text-color;
+	}
+
+
+}

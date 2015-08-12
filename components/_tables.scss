@@ -1,0 +1,87 @@
+$table-header-background-color: $darkColor !default;
+$table-header-text-color: $lightColor !default;
+$table-contrast-color: $contrastColor !default;
+
+$table-row-color: transparent !default;
+$table-even-row-color: #f6f6f6 !default;
+$table-hover-row-color: #f0f0f0 !default;
+
+$table-border-color: $midtone !default;
+
+
+table{
+  width: 100%;
+  
+  &.light{
+    thead{
+      color: $table-header-background-color;
+    }
+    
+    thead tr{
+      background-color: $table-header-text-color;
+    }
+  }
+  
+  &.zebra tbody tr:nth-child(even){
+      background-color: $table-even-row-color;
+    }
+  
+  thead{
+    
+    color: $table-header-text-color;
+    
+    tr{
+      background-color: $table-header-background-color;
+      border-bottom: 2px solid $table-border-color;
+    }
+  }
+  
+  tbody{
+    
+    & tr:hover{
+      background-color: $table-hover-row-color !important;
+    }
+  }
+  
+  tr{
+    height: 40px;
+    border-bottom: 1px solid $table-border-color;
+    border-top: 1px solid $table-border-color;
+    background-color: $table-row-color;
+  }
+  
+  th, td{
+    vertical-align: middle;
+    padding: 0 10px;
+  }
+  
+  th{
+    text-align: left;
+    position: relative;
+    
+    &.sortable.sorted{
+      border-bottom: 3px solid $table-contrast-color;
+    }
+    
+    &.sortable{
+      cursor: pointer;
+      
+      &:hover::after{
+        content:'';
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        border: 7px solid transparent;
+        border-top: 7px solid $table-contrast-color;
+        margin-top: -4px;
+      }
+      
+      &.ascending:hover::after{
+        border: 7px solid transparent;
+        border-bottom: 7px solid $table-contrast-color;
+        margin-top: -8px;
+      }
+    }
+  }
+}
