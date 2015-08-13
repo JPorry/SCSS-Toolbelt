@@ -513,27 +513,30 @@ table th.sortable.ascending:hover::after {
   font-size: .8rem;
   line-height: 25px;
   border-width: 1px;
-  font-size: 100;
 }
 
 .alert.secondary {
   background-color: #F39C12;
   color: #fff;
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .alert.warning {
   background-color: #F1C40F;
   color: #fff;
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .alert.info {
   background-color: #1ABC9C;
   color: #fff;
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .alert.danger {
   background-color: #E74C3C;
   color: #fff;
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 /*helpers*/
@@ -674,6 +677,10 @@ body > section .demo-box {
   position: relative;
   background-color: #fff;
   padding: 20px;
+}
+
+body > section .demo-box > .alert {
+  margin-bottom: 5px;
 }
 
 body > section > h1 {
