@@ -2,7 +2,7 @@ $side-menu-background-color: $darkColor !default;
 $side-menu-text-color: $lightColor !default;
 $side-menu-highlighted-color: $contrastColor !default;
 
-$side-menu-title: $contrastColor !default;
+$side-menu-title-color: $contrastColor !default;
 
 .side-menu{
   width: 100%;
@@ -12,7 +12,7 @@ $side-menu-title: $contrastColor !default;
   
   .side-menu-title{
     font-size: .8rem;
-    color: $side-menu-title;
+    color: $side-menu-title-color;
     padding: 20px 20px 5px;
   }
   
@@ -35,7 +35,7 @@ $side-menu-title: $contrastColor !default;
     color: $side-menu-background-color;
     
     .side-menu-title{
-      color: $side-menu-title;
+      color: $side-menu-title-color;
     }
     
     li a{
