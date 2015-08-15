@@ -35,22 +35,22 @@ $alert-danger-border-color: $alert-border-color !default;
   &.secondary{
 	background-color: $alert-secondary-background-color;
 	color: $alert-secondary-text-color;
-	border-color: $alert-secondary-text-border-color;
+	border-color: $alert-secondary-border-color;
   }
   &.warning{
 	background-color: $alert-warning-background-color;
 	color: $alert-warning-text-color;
-	border-color: $alert-warning-text-border-color;
+	border-color: $alert-warning-border-color;
   }
   &.info{
 	background-color: $alert-info-background-color;
 	color: $alert-info-text-color;
-	border-color: $alert-info-text-border-color;
+	border-color: $alert-info-border-color;
   }
   &.danger{
 	background-color: $alert-danger-background-color;
 	color: $alert-danger-text-color;
-	border-color: $alert-danger-text-border-color;
+	border-color: $alert-danger-border-color;
   }
 
 
