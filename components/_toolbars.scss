@@ -103,5 +103,9 @@ $toolbar-menu-font-size: .9rem !default;
   &.light{
     background-color: $toolbar-text-color;
     color: $toolbar-background-color;
+
+    .menu{
+      background-color: $toolbar-text-color;
+    }
   }
 }
