@@ -1,10 +1,18 @@
 $buttons-text-color: $lightTextColor !default;
+
+$buttons-secondary-text-color: $buttons-text-color !default;
+$buttons-danger-text-color: $buttons-text-color !default;
+$buttons-info-text-color: $buttons-text-color !default;
+$buttons-warning-text-color: $buttons-text-color !default;
+$buttons-disabled-text-color: $buttons-text-color !default;
+
 $buttons-primary-color: $primaryColor !default;
 $buttons-secondary-color: $secondaryColor !default;
 $buttons-danger-color: $dangerColor !default;
 $buttons-info-color: $infoColor !default;
 $buttons-warning-color: $warningColor !default;
 $buttons-disabled-color: $disabledColor !default;
+
 $buttons-active-overlay-color: #000 !default;
 $buttons-overlay-color: #fff !default;
 
@@ -52,18 +60,23 @@ button{
   
   &.secondary{
     background-color: $buttons-secondary-color;
+    color: $buttons-secondary-text-color;
   }
   &.warning{
     background-color: $buttons-warning-color;
+    color: $buttons-warning-text-color;
   } 
   &.danger{
     background-color: $buttons-danger-color;
+    color: $buttons-danger-text-color;
   }
   &.info{
     background-color: $buttons-info-color;
+    color: $buttons-info-text-color;
   }
   &:disabled{
     background-color: $buttons-disabled-color !important;
+    color: $buttons-disabled-text-color !important;
     cursor: auto;
     
     &:after{
