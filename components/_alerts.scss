@@ -12,10 +12,10 @@ $alert-danger-text-color: $lightTextColor !default;
 
 $alert-border-color: rgba(0,0,0,.1) !default;
 
-$alert-secondary-text-border-color: $alert-border-color !default;
-$alert-warning-text-border-color: $alert-border-color !default;
-$alert-info-text-border-color: $alert-border-color !default;
-$alert-danger-text-border-color: $alert-border-color !default;
+$alert-secondary-border-color: $alert-border-color !default;
+$alert-warning-border-color: $alert-border-color !default;
+$alert-info-border-color: $alert-border-color !default;
+$alert-danger-border-color: $alert-border-color !default;
 
 .alert{
   background-color: $alert-primary-background-color;
